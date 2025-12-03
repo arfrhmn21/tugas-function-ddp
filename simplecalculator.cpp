@@ -44,6 +44,8 @@ int main() {
     char yesOrNo;
 
     do {
+        system("cls");
+
         int userMenuChoice;
         float x, y;
     
@@ -54,6 +56,12 @@ int main() {
         cout << "4. Pembagian" << endl;
         cout << "0. Keluar" << endl;
         cout << "Pilih Menu (0-4): "; cin >> userMenuChoice;
+        
+        while (userMenuChoice < 0 || userMenuChoice > 4) {
+            cout << endl;
+            cout << "Menu tidak valid!" << endl;
+            cout << "Pilih Menu (0-4): "; cin >> userMenuChoice;
+        }
     
         if (userMenuChoice == 0) {
             cout << "Terimakasih Telah Menggunakan Program Kami.";
@@ -71,7 +79,7 @@ int main() {
     
         interface(userMenuChoice, x, y);
 
-        cout << "\nApakah ingin mengulagi Program? (y/n): "; cin >> yesOrNo;
+        cout << "\n\nApakah ingin mengulagi Program? (y/n): "; cin >> yesOrNo;
         while (tolower(yesOrNo) != 'y' && tolower(yesOrNo) != 'n') {
             cout << "\nInput Error! Mohon Masukkan (y/n): "; cin >> yesOrNo;
         }
@@ -81,13 +89,10 @@ int main() {
             isRunning = true;
         } else {
             isRunning = false;
-        }
-
-        system("cls");
-        
+        }        
     } while (isRunning);
 
-    cout << "Terimakasih Telah Menggunakan Program Kami.";
+    cout << "\nTerimakasih Telah Menggunakan Program Kami.";
 
     return 0;
 }
