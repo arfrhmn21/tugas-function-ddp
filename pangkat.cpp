@@ -3,15 +3,13 @@
 using namespace std;
 
 double power(int a, int b) {
-    if (b == 0) {
-        return 1;
-    }
+    if (b == 0) return 1;
 
-    if (b < 0) {
-        return 1 / (a * power(a, -b - 1));
-    }
+    if (b < 0) return 1.0 / power(a, -b);
+
     return a * power(a, b - 1);
 }
+
 
 int main() {
     bool isRunning = true;
